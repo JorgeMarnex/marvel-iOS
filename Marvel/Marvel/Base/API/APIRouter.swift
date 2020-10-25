@@ -10,29 +10,35 @@ import Alamofire
 
 enum APIRouter: APIConfiguration {
     
-    case getData
+    case getCharacters
     
     var method: HTTPMethod {
         switch self {
-        case .getData:
+        case .getCharacters:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .getData:
-            return ""
+        case .getCharacters:
+            return "/v1/public/characters"
         }
     }
     var parameters: RequestParams {
         switch self {
-        case .getData:
-            return .body([:])
+        case .getCharacters:
+            return .none
         }
     }
     
     func asURLRequest() throws -> URLRequest {
+        
+        func setURLComponents(_ params: [URLQueryItem]) {
+            var components = URLComponents(string:url.appendingPathComponent(path).absoluteString)
+            components?.queryItems = queryParams
+            urlRequest.url = components?.url
+        }
         
         // Base URL + endpoint
         let url = try APIConstants.baseURL.asURL()
@@ -42,23 +48,23 @@ enum APIRouter: APIConfiguration {
         urlRequest.httpMethod = method.rawValue
         
         // Common Headers
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+        
+        // Session parameters
+        let queryParams = APIConstants.sessionParameters.map({ URLQueryItem(name: $0.key, value: "\($0.value)") })
+        setURLComponents(queryParams)
         
         // Parameters
         switch parameters {
         case .body(let params):
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
         case .url(let params):
-            let queryParams = params.map { pair  in
-                return URLQueryItem(name: pair.key, value: "\(pair.value)")
-            }
-            var components = URLComponents(string:url.appendingPathComponent(path).absoluteString)
-            components?.queryItems = queryParams
-            urlRequest.url = components?.url
+            let queryParams = params.map({ URLQueryItem(name: $0.key, value: "\($0.value)") })
+            setURLComponents(queryParams)
+        case .none:
+            break
         }
         
         return urlRequest
     }
-
 }

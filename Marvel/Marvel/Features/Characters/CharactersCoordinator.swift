@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-protocol HomeCoordinatorDelegate: class {
+protocol CharactersCoordinatorDelegate: class {
     func pushToCreateAccount()
     func didFinish()
 }
 
-class HomeCoordinator: BaseCoordinator {
+class CharactersCoordinator: BaseCoordinator {
     
-    private var viewModel: HomeViewModel?
-    private var viewController: HomeViewController?
+    private var viewModel: CharactersViewModel?
+    private var viewController: CharactersViewController?
     
     override init(navigationController: UINavigationController) {
         super.init(navigationController: navigationController)
@@ -24,8 +24,8 @@ class HomeCoordinator: BaseCoordinator {
     
     override func start(parentCoordinator: CoordinatorType? = nil) {
         super.start(parentCoordinator: parentCoordinator)
-        viewController = HomeViewController.instantiate()
-        viewModel = HomeViewModel(coordinatorDelegate: self)
+        viewController = CharactersViewController.instantiate()
+        viewModel = CharactersViewModel(coordinatorDelegate: self, visualResponseDelegate: viewController)
         viewController?.viewModel = viewModel
         
         if let vc = viewController {
@@ -39,7 +39,7 @@ class HomeCoordinator: BaseCoordinator {
     }
 }
 
-extension HomeCoordinator: HomeCoordinatorDelegate {
+extension CharactersCoordinator: CharactersCoordinatorDelegate {
     
     func pushToCreateAccount() {
         let child = CreateAccountCoordinator(navigationController: navigationController)

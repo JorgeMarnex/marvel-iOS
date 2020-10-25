@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol Storyboarded {
+protocol Storyboarded: class {
     static func instantiate() -> Self
 }
 
