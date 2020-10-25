@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CharactersViewModel: BaseViewModel {
+final class CharactersViewModel: BaseViewModel {
     
     weak var coordinatorDelegate: CharactersCoordinatorDelegate?
     private var dataSource: CharactersDataSource = CharactersDataSource()
@@ -47,8 +47,8 @@ extension CharactersViewModel {
 // MARK: Navigation
 extension CharactersViewModel {
     
-    func pushToCreateAccount() {
-        coordinatorDelegate?.pushToCreateAccount()
+    func pushToCharactersDetail(character: Character?) {
+        coordinatorDelegate?.pushToCharactersDetail(character: character)
     }
     
     func didFinish() {

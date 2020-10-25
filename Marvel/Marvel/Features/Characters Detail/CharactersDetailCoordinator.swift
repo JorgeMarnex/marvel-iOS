@@ -8,14 +8,15 @@
 import Foundation
 import UIKit
 
-protocol CreateAccountCoordinatorDelegate: class {
+protocol CharactersDetailCoordinatorDelegate: class {
     func didFinish()
 }
 
-class CreateAccountCoordinator: BaseCoordinator, CreateAccountCoordinatorDelegate {
+final class CharactersDetailCoordinator: BaseCoordinator, CharactersDetailCoordinatorDelegate {
     
-    private var viewModel: CreateAccountViewModel?
-    private var viewController: CreateAccountViewController?
+    private var viewModel: CharactersDetailViewModel?
+    private var viewController: CharactersDetailViewController?
+    var character: Character?
     
     override init(navigationController: UINavigationController) {
         super.init(navigationController: navigationController)
@@ -23,8 +24,9 @@ class CreateAccountCoordinator: BaseCoordinator, CreateAccountCoordinatorDelegat
     
     override func start(parentCoordinator: CoordinatorType? = nil) {
         super.start(parentCoordinator: parentCoordinator)
-        viewController = CreateAccountViewController.instantiate()
-        viewModel = CreateAccountViewModel(coordinatorDelegate: self)
+        viewController = CharactersDetailViewController.instantiate()
+        viewModel = CharactersDetailViewModel(coordinatorDelegate: self, visualResponseDelegate: viewController)
+        viewModel?.character = character
         viewController?.viewModel = viewModel
         
         if let vc = viewController {

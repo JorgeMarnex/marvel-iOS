@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterCollectionViewCell: UICollectionViewCell {
+final class CharacterCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -34,14 +34,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateCell() {
-        self.imageView.load(url: characterImageURL)
+        self.imageView.load(url: character?.characterImageURL)
         self.titleLabel.text = character?.name
-    }
-    
-    var characterImageURL: URL? {
-        let thumbnail: CharacterThumbnail? = character?.thumbnail
-        let path: String = thumbnail?.path ?? ""
-        let fileExtension: String = thumbnail?.fileExtension ?? ""
-        return URL(string: path + "." + fileExtension)
     }
 }

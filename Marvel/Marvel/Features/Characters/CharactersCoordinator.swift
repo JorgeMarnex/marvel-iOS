@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 protocol CharactersCoordinatorDelegate: class {
-    func pushToCreateAccount()
+    func pushToCharactersDetail(character: Character?)
     func didFinish()
 }
 
-class CharactersCoordinator: BaseCoordinator {
+final class CharactersCoordinator: BaseCoordinator {
     
     private var viewModel: CharactersViewModel?
     private var viewController: CharactersViewController?
@@ -41,8 +41,9 @@ class CharactersCoordinator: BaseCoordinator {
 
 extension CharactersCoordinator: CharactersCoordinatorDelegate {
     
-    func pushToCreateAccount() {
-        let child = CreateAccountCoordinator(navigationController: navigationController)
+    func pushToCharactersDetail(character: Character?) {
+        let child = CharactersDetailCoordinator(navigationController: navigationController)
+        child.character = character
         child.start(parentCoordinator: self)
     }
 }

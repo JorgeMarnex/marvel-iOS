@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharactersViewController: BaseViewController {
+final class CharactersViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -17,13 +17,13 @@ class CharactersViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        callWebServices()
         binding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureView()
-        callWebServices()
     }
     
     private func binding() {
@@ -49,7 +49,7 @@ class CharactersViewController: BaseViewController {
 extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.charactersCount ?? 0
+        viewModel?.charactersCount ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,10 +60,14 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel?.pushToCharactersDetail(character: viewModel?.characters?.data?.results?[indexPath.row])
+    }
+    
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        let nib = UINib(nibName: cellIdentifier, bundle: nil)
+        let nib: UINib = UINib(nibName: cellIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
         setupCollectionViewItemSize()
     }

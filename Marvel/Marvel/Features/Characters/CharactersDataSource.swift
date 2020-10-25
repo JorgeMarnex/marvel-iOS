@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class CharactersDataSource: BaseNetwork {
+final class CharactersDataSource: BaseNetwork {
         
     func getCharacters(delegate: NetworkRequestProtocol?,
                        success: @escaping (CharactersResponse) -> Void,

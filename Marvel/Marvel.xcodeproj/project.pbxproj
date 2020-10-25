@@ -15,13 +15,13 @@
 		A04FAB1A25431EAB00159B1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04FAB1825431EAB00159B1D /* LaunchScreen.storyboard */; };
 		A04FAB242543206400159B1D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB232543206400159B1D /* Coordinator.swift */; };
 		A04FAB28254320C700159B1D /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB27254320C700159B1D /* Storyboarded.swift */; };
-		A04FAB2F254326E500159B1D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB2E254326E500159B1D /* CreateAccountViewController.swift */; };
+		A04FAB2F254326E500159B1D /* CharactersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB2E254326E500159B1D /* CharactersDetailViewController.swift */; };
 		A04FAB372543309100159B1D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB362543309100159B1D /* BaseViewController.swift */; };
 		A04FAB45254430BE00159B1D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB44254430BE00159B1D /* BaseCoordinator.swift */; };
 		A04FAB4B2544353B00159B1D /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB4A2544353B00159B1D /* CharactersCoordinator.swift */; };
 		A04FAB4E254436C200159B1D /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB4D254436C200159B1D /* CharactersViewModel.swift */; };
-		A04FAB5425443DC600159B1D /* CreateAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB5325443DC600159B1D /* CreateAccountCoordinator.swift */; };
-		A058CE2925444B9F00C605ED /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058CE2825444B9F00C605ED /* CreateAccountViewModel.swift */; };
+		A04FAB5425443DC600159B1D /* CharactersDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FAB5325443DC600159B1D /* CharactersDetailCoordinator.swift */; };
+		A058CE2925444B9F00C605ED /* CharactersDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058CE2825444B9F00C605ED /* CharactersDetailViewModel.swift */; };
 		A058CE442544A59B00C605ED /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058CE432544A59B00C605ED /* APIConfiguration.swift */; };
 		A058CE472544A61700C605ED /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058CE462544A61700C605ED /* APIConstants.swift */; };
 		A058CE4A2544AB2F00C605ED /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058CE492544AB2F00C605ED /* APIRouter.swift */; };
@@ -50,13 +50,13 @@
 		A04FAB1B25431EAB00159B1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04FAB232543206400159B1D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A04FAB27254320C700159B1D /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		A04FAB2E254326E500159B1D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		A04FAB2E254326E500159B1D /* CharactersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailViewController.swift; sourceTree = "<group>"; };
 		A04FAB362543309100159B1D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A04FAB44254430BE00159B1D /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		A04FAB4A2544353B00159B1D /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
 		A04FAB4D254436C200159B1D /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
-		A04FAB5325443DC600159B1D /* CreateAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCoordinator.swift; sourceTree = "<group>"; };
-		A058CE2825444B9F00C605ED /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		A04FAB5325443DC600159B1D /* CharactersDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailCoordinator.swift; sourceTree = "<group>"; };
+		A058CE2825444B9F00C605ED /* CharactersDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailViewModel.swift; sourceTree = "<group>"; };
 		A058CE432544A59B00C605ED /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		A058CE462544A61700C605ED /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		A058CE492544AB2F00C605ED /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -141,19 +141,19 @@
 			isa = PBXGroup;
 			children = (
 				A04FAB4025441CA300159B1D /* Characters */,
-				A04FAB3F25441C8F00159B1D /* Create Account */,
+				A04FAB3F25441C8F00159B1D /* Characters Detail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		A04FAB3F25441C8F00159B1D /* Create Account */ = {
+		A04FAB3F25441C8F00159B1D /* Characters Detail */ = {
 			isa = PBXGroup;
 			children = (
-				A04FAB5325443DC600159B1D /* CreateAccountCoordinator.swift */,
-				A058CE2825444B9F00C605ED /* CreateAccountViewModel.swift */,
-				A04FAB2E254326E500159B1D /* CreateAccountViewController.swift */,
+				A04FAB5325443DC600159B1D /* CharactersDetailCoordinator.swift */,
+				A058CE2825444B9F00C605ED /* CharactersDetailViewModel.swift */,
+				A04FAB2E254326E500159B1D /* CharactersDetailViewController.swift */,
 			);
-			path = "Create Account";
+			path = "Characters Detail";
 			sourceTree = "<group>";
 		};
 		A04FAB4025441CA300159B1D /* Characters */ = {
@@ -354,9 +354,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A04FAB2F254326E500159B1D /* CreateAccountViewController.swift in Sources */,
+				A04FAB2F254326E500159B1D /* CharactersDetailViewController.swift in Sources */,
 				A058CE4A2544AB2F00C605ED /* APIRouter.swift in Sources */,
-				A058CE2925444B9F00C605ED /* CreateAccountViewModel.swift in Sources */,
+				A058CE2925444B9F00C605ED /* CharactersDetailViewModel.swift in Sources */,
 				A058CE4D2544AE6C00C605ED /* CharactersDataSource.swift in Sources */,
 				A04FAB242543206400159B1D /* Coordinator.swift in Sources */,
 				A0EFA61B2545BAC4003E4DD4 /* BaseViewModel.swift in Sources */,
@@ -374,7 +374,7 @@
 				A04FAB0E25431EA900159B1D /* AppDelegate.swift in Sources */,
 				A058CE442544A59B00C605ED /* APIConfiguration.swift in Sources */,
 				A04FAB45254430BE00159B1D /* BaseCoordinator.swift in Sources */,
-				A04FAB5425443DC600159B1D /* CreateAccountCoordinator.swift in Sources */,
+				A04FAB5425443DC600159B1D /* CharactersDetailCoordinator.swift in Sources */,
 				A04FAB1025431EA900159B1D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

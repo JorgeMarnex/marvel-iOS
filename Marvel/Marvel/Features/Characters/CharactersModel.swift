@@ -46,3 +46,12 @@ struct CharacterThumbnail: Codable {
         case fileExtension = "extension"
     }
 }
+
+extension Character {
+    var characterImageURL: URL? {
+        let thumbnail: CharacterThumbnail? = self.thumbnail
+        let path: String = thumbnail?.path ?? ""
+        let fileExtension: String = thumbnail?.fileExtension ?? ""
+        return URL(string: path + "." + fileExtension)
+    }
+}
